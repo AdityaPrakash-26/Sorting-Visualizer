@@ -2,7 +2,7 @@
 function swap(el1, el2) {
     console.log('In swap()');
     
-    let temp = el1.style.height;
+    let temp = el1.style.height;    //third variable for swapping
     el1.style.height = el2.style.height;
     el2.style.height = temp;
     
@@ -16,6 +16,8 @@ function disableSortingBtn(){
     document.querySelector(".quickSort1").disabled = true;
     document.querySelector(".quickSort2").disabled = true;
     document.querySelector(".selectionSort").disabled = true;
+    document.querySelector(".combSort").disabled = true;
+    document.querySelector(".shellSort").disabled = true;
 }
 
 // Enables sorting buttons used in conjunction with disable
@@ -26,6 +28,8 @@ function enableSortingBtn(){
     document.querySelector(".quickSort1").disabled = false;
     document.querySelector(".quickSort2").disabled = false;
     document.querySelector(".selectionSort").disabled = false;
+    document.querySelector(".combSort").disabled = false;
+    document.querySelector(".shellSort").disabled = false;
 }
 
 // Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
@@ -40,12 +44,12 @@ function enableSizeSlider(){
 
 // Disables newArray buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableNewArrayBtn(){
-    document.querySelector(".newArray").disabled = true;
+    document.querySelector(".new").disabled = true;
 }
 
 // Enables newArray buttons used in conjunction with disable
 function enableNewArrayBtn(){
-    document.querySelector(".newArray").disabled = false;
+    document.querySelector(".new").disabled = false;
 }
 
 // Used in async function so that we can so animations of sorting, takes input time in ms (1000 = 1s)
@@ -59,7 +63,7 @@ function waitforme(milisec) {
 let arraySize = document.querySelector('#size_input');
 
 // Event listener to update the bars on the UI
-arraySize.addEventListener('input-panel', function(){
+arraySize.addEventListener('input', function(){
     console.log(arraySize.value, typeof(arraySize.value));
     createNewArray(parseInt(arraySize.value));
 });
@@ -90,7 +94,7 @@ function createNewArray(noOfBars = 60) {
     // creating an barArray of random numbers 
     barArray = [];
     for (let i = 0; i < noOfBars; i++) {
-        barArray.push(Math.floor(Math.random() * 250) + 1);
+        barArray.push(Math.floor(Math.random() * 251));
     }
     console.log(barArray);
 

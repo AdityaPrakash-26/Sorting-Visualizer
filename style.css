@@ -37,3 +37,7 @@ body {
     padding: 10px;
     justify-content: space-around;
 }
+
+#control-panel{
+    margin:auto auto auto auto;
+}
