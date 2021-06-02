@@ -1,0 +1,39 @@
+.dark-background {
+    background-color: #1b1b2f;
+}
+
+.text-color {
+    color: #e43f5a;
+}
+
+body {
+    background-color: #162447;
+}
+
+.flex-container{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 600px;
+    justify-content: center;
+    transition: 2s all ease;
+}
+
+.flex-item{
+    background: cyan;
+    border: 1pt solid black;
+    width: 10px;
+    transition: 0.1s all ease;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+#input-panel{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}

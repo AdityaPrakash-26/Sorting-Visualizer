@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sorting Visualizer</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="navbar dark-background">
+        <a class="navbar-brand text-color" href="#">Sorting Visualizer</a>
+            <span class="navbar-text text-color">
+                <a href = "https://github.com/AdityaPrakash-26/Sorting-Visualizer-v2">Source Code</a>
+            </span>
+    </nav>
+
+    <div id="sorting" class="flex-container">
+        
+    </div>
+
+    <div class="col" id="input-panel">
+        <span id="size">Size
+            <input id="size_input" type="range" min="5" max="100" step=1 value=60>
+        </span>
+        <span id="speed">Speed
+            <input id="speed_input" type="range" min="20" max="300" stepDown=10 value=60>
+        </span>
+    </div>
+
+    <button type="button" class="btn btn-outline-success new">New Array</button>
+    <div class="col-auto" style="float:right" id="control-panel">
+        <div class="btn-group-md btn-group-vertical">
+            <button type="button" class="btn btn-outline-light bubbleSort">Bubble Sort</button>
+            <button type="button" class="btn btn-outline-light mergeSort">Merge Sort</button>
+        </div>
+        <div class="btn-group-md btn-group-vertical">
+            <button type="button" class="btn btn-outline-light selectionSort">Selection Sort</button>
+            <button type="button" class="btn btn-outline-light combSort">Comb Sort</button>
+        </div>
+        <div class="btn-group-md btn-group-vertical">
+            <button type="button" class="btn btn-outline-light insertionSort">Insertion Sort</button>
+            <button type="button" class="btn btn-outline-light shellSort">Shell Sort</button>
+        </div>
+        <div class="btn-group-md btn-group-vertical">
+            <button type="button" class="btn btn-outline-light quickSort1">Quick Sort(First Index)</button>
+            <button type="button" class="btn btn-outline-light quickSort2">Quick Sort(Last Index)</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="sorting.js" async defer></script>
+</body>
+
+</html>
