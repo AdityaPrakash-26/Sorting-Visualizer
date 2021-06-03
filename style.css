@@ -10,7 +10,7 @@ body {
     background-color: #162447;
 }
 
-.flex-container{
+.flex-container {
     margin-top: 20px;
     display: flex;
     flex-wrap: nowrap;
@@ -20,24 +20,26 @@ body {
     transition: 2s all ease;
 }
 
-.flex-item{
-    background: cyan;
+.flex-item {
+    background: #e43f5a;
     border: 1pt solid black;
     width: 10px;
     transition: 0.1s all ease;
 }
 
-.row{
+.row {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
 }
 
-#input-panel{
+#input-panel {
     display: flex;
     padding: 10px;
     justify-content: space-around;
 }
 
-#control-panel{
-    margin:auto auto auto auto;
+.center {
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
