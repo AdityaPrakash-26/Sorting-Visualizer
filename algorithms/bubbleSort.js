@@ -23,18 +23,25 @@ async function bubble() {
 
 const bubSortbtn = document.querySelector(".bubbleSort");
 bubSortbtn.addEventListener('click', async function(){
+    flag = false;
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
     enableStopSortingBtn();
     await bubble();
-    enableSortingBtn();
-    enableSizeSlider();
+    if(flag==true){
+        disableSpeedSlider();
+    } else {
+        enableSortingBtn();
+        enableSizeSlider();
+    }
     enableNewArrayBtn();
     disableStopSortingBtn();
 });
 
 const stopSortingButton = document.querySelector(".stop");
 stopSortingButton.addEventListener("click", function(){
+    disableSortingBtn();
+    disableSizeSlider();
     flag = true;
 })

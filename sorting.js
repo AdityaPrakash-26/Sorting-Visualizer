@@ -37,6 +37,14 @@ function disableSizeSlider(){
     document.querySelector("#size_input").disabled = true;
 }
 
+function disableSpeedSlider(){
+    document.querySelector("#speed_input").disabled = true;
+}
+
+function enableSpeedSlider(){
+    document.querySelector("#speed_input").disabled = false;
+}
+
 // Enables size slider used in conjunction with disable
 function enableSizeSlider(){
     document.querySelector("#size_input").disabled = false;
