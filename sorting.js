@@ -47,13 +47,20 @@ function disableNewArrayBtn(){
     document.querySelector(".new").disabled = true;
 }
 
-// Enables newArray buttons used in conjunction with disable
 function enableNewArrayBtn(){
     document.querySelector(".new").disabled = false;
 }
 
+function enableStopSortingBtn(){
+    document.querySelector(".stop").disabled = false;
+}
+
+function disableStopSortingBtn(){
+    document.querySelector(".stop").disabled = true;
+}
+
 // Used in async function so that we can so animations of sorting, takes input time in ms (1000 = 1s)
-function waitforme(milisec) { 
+function delayTime(milisec) { 
     return new Promise(resolve => { 
         setTimeout(() => { resolve('') }, milisec); 
     }) 

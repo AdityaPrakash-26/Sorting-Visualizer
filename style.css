@@ -34,7 +34,7 @@ body {
 
 #input-panel {
     display: flex;
-    padding: 10px;
+    margin-top: 50px;
     justify-content: space-around;
 }
 
@@ -42,6 +42,11 @@ body {
     display: flex;
     justify-content: center;
     margin: auto;
+}
+
+#sorting {
+    margin-bottom: 50px;
+    transform: rotate(180deg) scaleX(-1); 
 }
 
 .range-input {
