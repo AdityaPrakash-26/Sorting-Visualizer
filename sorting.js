@@ -141,3 +141,5 @@ newArrayButton.addEventListener("click", function(){
     enableSizeSlider();
     createNewArray(arraySize.value);
 });
+
+const stopSortingButton = document.querySelector(".stop");
