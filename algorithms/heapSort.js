@@ -2,15 +2,23 @@ async function heapSort(arr, n) {
 
     // Build heap (rearrange array)
     for (var i = n / 2 - 1; i >= 0; i--) {
+        if(flag == true){
+            return;
+        }
         heapify(arr, n, i);
     }
 
     // One by one extract an element from heap
     for (var i = n - 1; i > 0; i--) {
+        if(flag == true){
+            return;
+        }
         // Move current root to end
         var temp = arr[0];
         arr[0] = arr[i];
         arr[i] = temp;
+        arr[0].style.background = 'cyan';
+        arr[i].style.background = 'green';
         swap(arr[0], arr[i]);
         await delayTime(delay);
 
@@ -22,18 +30,27 @@ async function heapSort(arr, n) {
 // To heapify a subtree rooted with node i which is
 // an index in arr[]. n is size of heap
 async function heapify(arr, n, i) {
+    if(flag == true){
+        return;
+    }
     var largest = i; // Initialize largest as root
     var l = 2 * i + 1; // left = 2*i + 1
     var r = 2 * i + 2; // right = 2*i + 2
 
     // If left child is larger than root
+    
     if (l < n && parseInt(arr[l].style.height) > parseInt(arr[largest].style.height)) {
+        arr[l].style.background = 'lightblue';
+        arr[largest].style.background = 'red';
         largest = l;
         swap(arr[largest], arr[l]);
     }
+    
 
     // If right child is larger than largest so far
     if (r < n && parseInt(arr[r].style.height) > parseInt(arr[largest].style.height)) { 
+        arr[r].style.background = 'lightgreen';
+        arr[largest].style.background = 'red'; 
         largest = r;
         swap(arr[largest], arr[r]);
     }
@@ -61,6 +78,7 @@ heapSortbtn.addEventListener("click", async function () {
     disableNewArrayBtn();
     enableStopSortingBtn();
     await heapSort(arr, n);
+    arr[0].style.background = 'green';
     if (flag == true) {
         disableSpeedSlider();
     } else {
