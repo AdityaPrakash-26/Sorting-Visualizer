@@ -1,3 +1,3 @@
-# Sorting-Visualizer-v2 [WIP]
+# Sorting-Visualizer [WIP]
 
 Currently a work-in-progress
