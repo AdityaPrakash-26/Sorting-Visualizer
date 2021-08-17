@@ -1,10 +1,10 @@
-let flag = new Boolean(false);
+let hasPressedStop = new Boolean(false);
 
 async function bubble() {
     const ele = document.querySelectorAll(".bar");
     for(let i = 0; i < ele.length-1; i++){
         for(let j = 0; j < ele.length-i-1; j++){
-            if(flag == true){
+            if(hasPressedStop == true){
                 return;
             }
             ele[j].style.background = 'cyan';
@@ -23,13 +23,13 @@ async function bubble() {
 
 const bubSortbtn = document.querySelector(".bubbleSort");
 bubSortbtn.addEventListener('click', async function(){
-    flag = false;
+    hasPressedStop = false;
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
     enableStopSortingBtn();
     await bubble();
-    if(flag==true){
+    if(hasPressedStop==true){
         disableSpeedSlider();
     } else {
         enableSortingBtn();

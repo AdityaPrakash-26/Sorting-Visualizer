@@ -6,7 +6,7 @@ async function merge(ele, low, mid, high){
     let right = new Array(n2);
 
     for(let i = 0; i < n1; i++){
-        if(flag==true){
+        if(hasPressedStop==true){
             return;
         }
         await delayTime(delay);
@@ -14,7 +14,7 @@ async function merge(ele, low, mid, high){
         left[i] = ele[low + i].style.height;
     }
     for(let i = 0; i < n2; i++){
-        if(flag==true){
+        if(hasPressedStop==true){
             return;
         }
         await delayTime(delay);
@@ -24,7 +24,7 @@ async function merge(ele, low, mid, high){
     await delayTime(delay);
     let i = 0, j = 0, k = low;
     while(i < n1 && j < n2){
-        if(flag==true){
+        if(hasPressedStop==true){
             return;
         }
         await delayTime(delay);
@@ -54,7 +54,7 @@ async function merge(ele, low, mid, high){
         }
     }
     while(i < n1){
-        if(flag==true){
+        if(hasPressedStop==true){
             return;
         }
         await delayTime(delay);
@@ -69,7 +69,7 @@ async function merge(ele, low, mid, high){
         k++;
     }
     while(j < n2){
-        if(flag==true){
+        if(hasPressedStop==true){
             return;
         }
         await delayTime(delay);
@@ -106,7 +106,7 @@ mergeSortbtn.addEventListener('click', async function(){
     disableNewArrayBtn();
     enableStopSortingBtn();
     await mergeSort(ele, l, r);
-    if(flag==true){
+    if(hasPressedStop==true){
         disableSpeedSlider();
     } else {
         enableSortingBtn();

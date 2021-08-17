@@ -2,15 +2,15 @@ async function heapSort(arr, n) {
 
     // Build heap (rearrange array)
     for (var i = n / 2 - 1; i >= 0; i--) {
-        if(flag == true){
+        if(hasPressedStop == true){
             return;
         }
-        heapify(arr, n, i);
+        await heapify(arr, n, i);
     }
 
     // One by one extract an element from heap
     for (var i = n - 1; i > 0; i--) {
-        if(flag == true){
+        if(hasPressedStop == true){
             return;
         }
         // Move current root to end
@@ -23,14 +23,14 @@ async function heapSort(arr, n) {
         await delayTime(delay);
 
         // call max heapify on the reduced heap
-        heapify(arr, i, 0);
+        await heapify(arr, i, 0);
     }
 }
 
 // To heapify a subtree rooted with node i which is
 // an index in arr[]. n is size of heap
 async function heapify(arr, n, i) {
-    if(flag == true){
+    if(hasPressedStop == true){
         return;
     }
     var largest = i; // Initialize largest as root
@@ -40,19 +40,21 @@ async function heapify(arr, n, i) {
     // If left child is larger than root
     
     if (l < n && parseInt(arr[l].style.height) > parseInt(arr[largest].style.height)) {
-        arr[l].style.background = 'lightblue';
-        arr[largest].style.background = 'red';
+        // arr[l].style.background = 'lightblue';
+        // arr[largest].style.background = 'cyan';
         largest = l;
         swap(arr[largest], arr[l]);
+        // arr[l].style.background = '#e43f5a';
     }
     
 
     // If right child is larger than largest so far
     if (r < n && parseInt(arr[r].style.height) > parseInt(arr[largest].style.height)) { 
-        arr[r].style.background = 'lightgreen';
-        arr[largest].style.background = 'red'; 
+        // arr[r].style.background = 'lightgreen';
+        // arr[largest].style.background = 'cyan'; 
         largest = r;
         swap(arr[largest], arr[r]);
+        // arr[l].style.background = '#e43f5a'; 
     }
 
     // If largest is not root
@@ -72,14 +74,14 @@ heapSortbtn.addEventListener("click", async function () {
     let arr = document.querySelectorAll('.bar');
     let n = arr.length;
 
-    flag = false;
+    hasPressedStop = false;
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
     enableStopSortingBtn();
     await heapSort(arr, n);
     arr[0].style.background = 'green';
-    if (flag == true) {
+    if (hasPressedStop == true) {
         disableSpeedSlider();
     } else {
         enableSortingBtn();

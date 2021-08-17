@@ -2,7 +2,7 @@ async function insertion(){
     const ele = document.querySelectorAll(".bar");
     ele[0].style.background = 'green';
     for(let i = 1; i < ele.length; i++){
-        if(flag==true){
+        if(hasPressedStop==true){
             return;
         }
         let j = i - 1;
@@ -10,12 +10,12 @@ async function insertion(){
         ele[i].style.background = 'blue';
 
         await delayTime(delay);
-        if(flag==true){
+        if(hasPressedStop==true){
             return;
         }
 
         while(j >= 0 && (parseInt(ele[j].style.height) > parseInt(key))){
-            if(flag==true){
+            if(hasPressedStop==true){
                 return;
             }
             ele[j].style.background = 'blue';
@@ -23,7 +23,7 @@ async function insertion(){
             j--;
 
             await delayTime(delay);
-            if(flag==true){
+            if(hasPressedStop==true){
                 return;
             }
             for(let k = i; k >= 0; k--){
@@ -42,7 +42,7 @@ inSortbtn.addEventListener('click', async function(){
     disableNewArrayBtn();
     enableStopSortingBtn();
     await insertion();
-    if(flag==true){
+    if(hasPressedStop==true){
         disableSpeedSlider();
     } else {
         enableSortingBtn();
