@@ -11,7 +11,6 @@ async function selection(){
             if(hasPressedStop==true){
                 return;
             }
-            console.log('In jth loop');
             // Change color of current bar
             ele[j].style.background = 'cyan';
 
