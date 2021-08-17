@@ -20,7 +20,6 @@ async function selection(){
                 return;
             }
             if(parseInt(ele[j].style.height) < parseInt(ele[min_index].style.height)){
-                console.log('In if condition height comparision');
                 if(min_index !== i){
                     // new min_index is found so change prev min_index color back to normal
                     ele[min_index].style.background = '#e43f5a';
