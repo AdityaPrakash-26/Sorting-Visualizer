@@ -1,5 +1,6 @@
-async function heapSort(arr, n) {
+//TO:DO fix the colors in heapify
 
+async function heapSort(arr, n) {
     // Build heap (rearrange array)
     for (var i = n / 2 - 1; i >= 0; i--) {
         if(hasPressedStop == true){
@@ -40,7 +41,7 @@ async function heapify(arr, n, i) {
     // If left child is larger than root
     
     if (l < n && parseInt(arr[l].style.height) > parseInt(arr[largest].style.height)) {
-        // arr[l].style.background = 'lightblue';
+        // arr[l].style.background = 'lightblue'; 
         // arr[largest].style.background = 'cyan';
         largest = l;
         swap(arr[largest], arr[l]);
